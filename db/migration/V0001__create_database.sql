@@ -5,6 +5,7 @@ CREATE TABLE `CarrinhoCompra` (
 );
 CREATE TABLE `Produto` (
   `id` bigint NOT NULL AUTO_INCREMENT,
+  `idProdutoService` bigint NOT NULL,
   `valor` double NOT NULL,
   `idCarrinho` bigint NOT NULL,
   PRIMARY KEY (`id`),

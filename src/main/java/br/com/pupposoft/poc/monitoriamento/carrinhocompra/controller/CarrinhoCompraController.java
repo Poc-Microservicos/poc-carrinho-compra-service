@@ -31,14 +31,9 @@ public class CarrinhoCompraController {
 	@PostMapping("carrinhos")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Long criar(@RequestBody(required = true) CarrinhoCompraJson carrinhoCompraJson) {
-		log.info("Start carrinhoCompraJson={}", carrinhoCompraJson);
-		
 		CarrinhoCompra carrinhoCompra = mapJsonToDomain(carrinhoCompraJson);
 		
-		Long carrinhoId = criarCarrinhoUseCase.criar(carrinhoCompra);
-		
-		log.info("End carrinhoId={}", carrinhoId);
-		return carrinhoId;
+		return criarCarrinhoUseCase.criar(carrinhoCompra);
 	}
 	
 	private CarrinhoCompra mapJsonToDomain(CarrinhoCompraJson carrinhoCompraJson) {
